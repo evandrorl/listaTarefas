@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio 03</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <script>
+
+    function excluir(clicado) {
+      var elemento = document.getElementById('lista' + clicado)
+      if (elemento.parentNode) {
+        elemento.parentNode.removeChild(elemento)
+      }
+    }
+
+    function confirmatarefa(clicado) {
+      var item = document.getElementById('lista' + clicado)
+
+      if (item.concluido) {
+        item.innerHTML = item.innerHTML.replace('check', 'frame')
+        item.concluido = false
+        item.style.color = '#18161F'
+        item.style.textDecoration = 'none'
+
+
+      } else {
+        item.innerHTML = item.innerHTML.replace('frame', 'check')
+        item.concluido = true
+        item.style.color = '#02B553'
+        item.style.textDecoration = 'line-through'
+      }
+    }
+
+    function adicionarTarefa() {
+      const lista = document.getElementById('listaTarefas')
+      const novaTarefa = document.getElementById('tarefa')
+      const item = document.createElement('li')
+      let index = lista.children.length
+      item.id = 'lista' + index
+      lista.appendChild(item)
+      item.concluido = false
+      item.innerHTML = '<img src=img/frame.svg onclick=confirmatarefa(' + index + ')>' + novaTarefa.value + '<img src=img/remove.svg onclick=excluir(' + index + ')>'
+    }
+  </script>
+</head>
+
+<body>
+  <div id=app>
+    <div id="adicionar">
+      <div id="inicio">
+        <h2><img src="img/board.svg" />Adicionar Tarefas</h2>
+      </div>
+      <div id="frame5">
+        <input id="tarefa" type="text" placeholder="Descreva a Tarefa">
+        <button id="addTarefa" onclick="adicionarTarefa()">Criar Tarefa</button>
+      </div>
+    </div>
+
+    <div id="listar">
+      <div id="frame16">
+        <h2><img src="img/task.svg" /> Quadro de tarefas</h2>
+      </div>
+      <div id="frame10">
+        <ul id="listaTarefas">
+      </div>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>
