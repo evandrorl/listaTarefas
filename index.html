@@ -21,14 +21,14 @@
       var item = document.getElementById('lista' + clicado)
 
       if (item.concluido) {
-        item.innerHTML = item.innerHTML.replace('check', 'frame')
+        item.innerHTML = item.innerHTML.replace('check', 'marcador')
         item.concluido = false
         item.style.color = '#18161F'
         item.style.textDecoration = 'none'
 
 
       } else {
-        item.innerHTML = item.innerHTML.replace('frame', 'check')
+        item.innerHTML = item.innerHTML.replace('marcador', 'check')
         item.concluido = true
         item.style.color = '#02B553'
         item.style.textDecoration = 'line-through'
@@ -43,7 +43,7 @@
       item.id = 'lista' + index
       lista.appendChild(item)
       item.concluido = false
-      item.innerHTML = '<img src=img/frame.svg onclick=confirmatarefa(' + index + ')>' + novaTarefa.value + '<img src=img/remove.svg onclick=excluir(' + index + ')>'
+      item.innerHTML = ' <img src=img/marcador.svg onclick=confirmatarefa(' + index + ')> ' + novaTarefa.value + ' <img src=img/remove.svg onclick=excluir(' + index + ')> '
     }
   </script>
 </head>
@@ -54,17 +54,18 @@
       <div id="inicio">
         <h2><img src="img/board.svg" />Adicionar Tarefas</h2>
       </div>
-      <div id="frame5">
+      <div id="marcador5">
         <input id="tarefa" type="text" placeholder="Descreva a Tarefa">
         <button id="addTarefa" onclick="adicionarTarefa()">Criar Tarefa</button>
       </div>
     </div>
 
     <div id="listar">
-      <div id="frame16">
-        <h2><img src="img/task.svg" /> Quadro de tarefas</h2>
+      <div id="marcador16">
+        <img src="img/task.svg" />
+        <h2>Quadro de tarefas</h2>
       </div>
-      <div id="frame10">
+      <div id="marcador10">
         <ul id="listaTarefas">
       </div>
       </ul>
