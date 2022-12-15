@@ -1,9 +1,14 @@
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-
-
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 #app {
@@ -33,7 +38,6 @@ body {
   width: 244px;
   height: 32px;
   /* Heading/2xl - H6 */
-  font-family: 'Space Grotesk';
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -96,11 +100,11 @@ button {
   border-radius: 16px;
   /* Inside auto layout */
   flex: none;
+
   order: 2;
   flex-grow: 0;
-  font-family: 'Space Grotesk';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   /* identical to box height, or 150% */
@@ -150,7 +154,6 @@ button {
   width: 258px;
   height: 32px;
 
-  font-family: 'Space Grotesk';
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -176,6 +179,7 @@ li {
   align-items: center;
   padding: 24px;
   gap: 48px;
+  margin-bottom: 10px;
 
   width: 640px;
   height: 72px;
@@ -183,6 +187,8 @@ li {
   background: #FFFFFF;
   border: 2px solid #02B553;
   border-radius: 24px;
+
+
 
   /* Inside auto layout */
 
