@@ -56,6 +56,7 @@
         item.concluido = false
         item.innerHTML = ' <img src=img/marcador.svg onclick=confirmatarefa(' + index + ')> ' + novaTarefa.value + ' <img src=img/remove.svg onclick=excluir(' + index + ')> '
       }
+      document.getElementById('tarefa').value = ''
     }
   </script>
 </head>
@@ -67,7 +68,7 @@
         <h2><img src="img/board.svg" />Adicionar Tarefas</h2>
       </div>
       <div id="frame5">
-        <input id="tarefa" type="text" placeholder="Descreva a Tarefa">
+        <input id="tarefa" type="text" placeholder="Informe um nome para a tarefa">
         <button id="addTarefa" onclick="adicionarTarefa()">Criar
           Tarefa</button>
       </div>
@@ -78,7 +79,7 @@
         <h2><img src="img/task.svg" />Quadro de tarefas</h2>
       </div>
       <div id="frame10">
-        <ul id="listaTarefas">
+        <ul id="listaTarefas"></ul>
       </div>
       </ul>
     </div>
